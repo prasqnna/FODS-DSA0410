@@ -1,0 +1,14 @@
+import pandas as pd
+
+data={
+    'customer_id' :[101,102,103,104,105],
+    'order_date':["2023-03-01","2023-05-01","2023-07-01","2023-08-01","2023-10-01"],
+    'product_id' :[1,2,3,4,5]
+ }
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+df['order_date'] = pd.to_datetime(df['order_date'])
+df['month'] = df['order_date'].dt.month
+print("after transformation:\n")
+print(df)
