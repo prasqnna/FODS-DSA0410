@@ -1,0 +1,17 @@
+import pandas as pd
+orders={"order_id":[1,2,3,4,5],
+        "customer_id":[101,102,103,104,105],
+        "product_id":[11,12,13,14,15],
+        "quntity_orederd":[2,4,5,2,1],
+        "order_date":["2023-03-01","2023-05-01","2023-07-01","2023-08-01","2023-10-01"]}
+products={"product_id":[11,12,13,14,15],
+          "product_name":['bag','shirt','laptop','book','bottle'],
+          "category":['sports','clothing','electronic','books','home'],
+          "price":[500,1000,30,10,100]}
+orders_df=pd.DataFrame(orders)
+products_df=pd.DataFrame(products)
+integrated_df = pd.merge(orders_df, products_df, on='product_id', how='left')
+print(integrated_df)
+print("Integration completed and saved successfully!")
+
+ 
